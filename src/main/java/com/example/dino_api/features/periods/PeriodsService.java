@@ -2,8 +2,6 @@ package com.example.dino_api.features.periods;
 
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
-
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
@@ -23,6 +21,10 @@ public class PeriodsService {
     public PeriodViewDTO getPeriodsById(Long id) {
         return periodMapper.toDt(repository.findById(id).orElseThrow());
     }
+
+    //suficiente con un transaccional 
+    // si no quieres que se ejecute cuando se cumple con una determinada excepcion se lanzas una excepciop
+    //automaticamente hace rolbag sino lo haces destro del cuerpo tambien se va a lanzar un rolbag
     @Transactional
     public PeriodViewDTO addPeriods(PeriodWriteDTO Periods) {
         return save(Periods);
