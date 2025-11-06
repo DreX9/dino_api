@@ -1,8 +1,6 @@
 package com.example.dino_api.security;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -22,7 +20,7 @@ public class CustomUserDetail implements UserDetails{
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return user.getUsersRoles().stream()
-        .map(role -> new SimpleGrantedAuthority((role.getRoles().getNombre())))
+        .map(role -> new SimpleGrantedAuthority(role.getRoles().getNombre()))
         .collect(Collectors.toList());
     }
 

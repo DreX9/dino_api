@@ -24,7 +24,7 @@ public class DinoApiApplication {
 	// 			user.setName("admin");
 	// 			user.setEmail("admin@mail.com");
 	// 			user.setPassword(encoder.encode("123456"));
-	// 			user.setRol("ADMIN");
+	// 			user.setRoles("ADMIN");
 	// 			repository.save(user);
 	// 		}
 	// 	}; 
